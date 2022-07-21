@@ -1,0 +1,59 @@
+/* ==UserStyle==
+@name           Minimal StackOverflow
+@namespace      USO Archive
+@author         jannismain
+@description    `Clean up StackOverflow, especially it's question page. Based on pmer's adaptation \"Undistractify StackOverflow Enhanced\" of hardy tom’s original <a href=\"https://userstyles.org/styles/110637/undistractify-stackoverflow\">Undistractify StackOverflow</a>.`
+@version        1.0.0
+@license        CC0-1.0
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain(\"superuser.com\"), domain(\"stackoverflow.com\"), domain(\"stackexchange.com\") {
+  #hot-network-questions,
+  .s-sidebarwidget,
+  li:nth-of-type(3) > .nav-links,
+  .module.community-bulletin,
+  #chat-feature,
+  #footer-sites,
+  .js-feed-link,
+  #herobox, .s-hero, /* Ads to join the site. */
+  .ad, .ad-container, /* Ads for products. */
+  footer,
+  /* Additions by mkj */
+  .js-teams-promo.fs-body2.fc-white.d\\:fc-black.d\\:bg-white.bg-black-750.bs-md.z-active.overflow-hidden.teams-promo
+  {
+    display: none;
+  }
+}
+
+@-moz-document url-prefix(\"https://stackoverflow.com/questions/\") {
+    /* hide \"Ask Question\" button on questions page */
+    .s-btn__primary.s-btn,
+    /* hide non-essential nav elements */
+    .s-topbar--menu-btn,
+    .s-navigation,
+    .js-inbox-button,
+    .js-achievements-button,
+    .js-help-button,
+    .js-site-switcher-button,
+    /* hide bottom notice */
+    .bottom-notice
+    {
+        display: none !important;
+    }
+
+    /* hide sidebar and center content */
+    #sidebar {
+        display: none;
+    }
+    #mainbar {
+        width: 100%;
+    }
+    #content {
+        max-width: 800px;
+        width: 100%;
+    }
+    .s-topbar .s-topbar--container {
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+}
